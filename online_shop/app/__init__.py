@@ -25,3 +25,5 @@ def create_app():
     from .routes import bp as routes_bp
     app.register_blueprint(routes_bp)
     return app
+#from .routes import bp as routes_bp - імпортує блупрінт з модуля routes.py
+#app.register_blueprint(routes_bp) - реєструє блупрінт у додатку Flask 
