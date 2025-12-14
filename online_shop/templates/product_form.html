@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>{{ action }}Product List</h1>
+    <form method="post">
+        <lable>Name:
+            <input type="text" name="name" value="{{product.name if product else '' }}" required>
+        </lable> <br>
+
+        <lable>Price:
+            <input type="number" name="price" step=0.01 value="{{product.price if product else '' }}" required>
+        </lable> <br>
+
+        <label>active:
+        <input type="checkbox" name="is_active"
+               {% if product and product.is_active %}checked{% endif %}>
+        </label><br>
+
+        <label>stock:
+        <input type="number" name="stock"
+               {% if product and product.stock %}checked{% endif %}>
+        </label><br>
+
+        <label>description:
+        <input type="text" name="description"
+               {% if product and product.description %}checked{% endif %}>
+        </label><br>
+
+        <label>category:
+        <input type="text" name="category"
+               {% if product and product.category %}checked{% endif %}>
+        </label><br>
+
+        <label>rating:
+        <input type="number" name="rating"
+               {% if product and product.rating %}checked{% endif %}>
+        </label><br>
+
+        <label>sale:
+        <input type="checkbox" name="sale"
+               {% if product and product.sale %}checked{% endif %}>
+        </label><br>
+
+
+        <button type="submit">{{ action }} Product</button>
+    </form>
+    <a href="{{ url_for('routes.add_product') }}">Back to list</a>
+</body>
+</html>

@@ -13,3 +13,13 @@ class Product(db.Model):
 #name=db.Column(db.String(100), nullable=False) - визначає стовпець name як рядок довжиною до 100 символів, не може бути порожнім
     price=db.Column(db.Float, nullable=False)
 #price=db.Column(db.Float, nullable=False) - визначає стовпець price як число з плаваючою комою, не може бути порожнім
+    created_at = db.Column(db.DateTime, default=db.func.now())
+    updated_at = db.Column(db.DateTime, default=db.func.now(), onupdate=db.func.now())
+    description = db.Column(db.Text, nullable=True)
+    stock = db.Column(db.Integer, nullable=False, default=0)
+    is_active = db.Column(db.Boolean, nullable=False, default=True)
+    category = db.Column(db.String(50), nullable=True)
+    rating = db.Column(db.Float, nullable=True)
+    sale = db.Column(db.Boolean, nullable=False, default=True)
+    
+    
