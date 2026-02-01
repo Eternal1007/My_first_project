@@ -20,6 +20,6 @@ class Product(db.Model):
     is_active = db.Column(db.Boolean, nullable=False, default=True)
     category = db.Column(db.String(50), nullable=True)
     rating = db.Column(db.Float, nullable=True)
-    sale = db.Column(db.Boolean, nullable=False, default=True)
+    sale = db.Column(db.Boolean, nullable=True, default=False)
     
     
