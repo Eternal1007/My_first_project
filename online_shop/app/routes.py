@@ -7,7 +7,9 @@ bp=Blueprint('routes', __name__)
 
 @bp.route('/')
 def index():
-    return render_template('index.html')
+    products = Product.query.all()
+    return render_template('index.html', 
+                           products=products)
 #@bp.route('/') - визначає маршрут для головної сторінки
 #Функція index() рендерить шаблон index.html при доступі до головної сторінки
 #return render_template('index.html') - повертає відрендерений HTML-шаблон index.html
