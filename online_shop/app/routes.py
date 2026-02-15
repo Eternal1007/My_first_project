@@ -32,7 +32,7 @@ def add_product():
         category=request.form['category']
         rating=request.form['rating']
         sale=request.form.get('sale') ==  'on'
-        product=Product(name=name, price=float(price))
+        product=Product(name=name, price=float(price), description=description, stock=float(stock), is_active=is_active, category=category, rating=rating, sale=sale)
         db.session.add(product)
         db.session.commit()
         flash('Product added')
